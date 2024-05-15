@@ -64,17 +64,7 @@ def save_model_in1():
     print(mean_absolute_error(y_test,y_pred))
     print(sqrt(mean_squared_error(y_test,y_pred)))
         
-    filename = "model.joblib"
-    joblib.dump(pipe, filename)
-    
-    # def compressed_pickle(title, data):
-
-    #     with bz2.BZ2File(title + '.pbz2', 'w') as f:
-    #         pickle.dump(data, f)
-
-    
-
-    # compressed_pickle('xgb_model', pipe)
+    pickle.dump(pipe, open('model.pkl', 'wb'))
 
 if __name__ == '__main__':
     save_model_in1()
